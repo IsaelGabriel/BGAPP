@@ -14,6 +14,8 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        ConstraintLayout bgElement = (ConstraintLayout) findViewById(R.id.activity_main);
+        bgElement.setBackgroundColor(Color.RED);
         myButtonListenerMethod();
     }
     public void myButtonListenerMethod() {
@@ -25,10 +27,13 @@ public class MainActivity extends AppCompatActivity {
                 int color = ((ColorDrawable) bgElement.getBackground()).getColor();
                 if (color == Color.RED) {
                     bgElement.setBackgroundColor(Color.BLUE);
+                    button.setText("RED");
                 } else {
                     bgElement.setBackgroundColor(Color.RED);
+                    button.setText("BLUE");
                 }
             }
         });
     }
 }
+/* ao mudar a cor para vermelho, texto do botão = azul e vice versa */
